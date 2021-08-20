@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchBar from './SearchBar'
-import{AppBar, Toolbar, makeStyles,Typography,Box, FormHelperText} from '@material-ui/core'
+import HeaderButtons from './HeaderButtons'
+import{AppBar, Toolbar, makeStyles,Typography,Box, FormHelperText, withStyles} from '@material-ui/core'
 
 const useStyle = makeStyles({
     header:{
@@ -31,6 +32,13 @@ const useStyle = makeStyles({
     
 })
 
+const ToolBar = withStyles({
+    root:{
+        minHeight:55,
+
+    }
+})(Toolbar)
+
 function Header() {
 
     const classes = useStyle();
@@ -38,17 +46,18 @@ function Header() {
     const subURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png';
     return (
         <AppBar className={classes.header}>
-            <Toolbar>
+            <ToolBar>
                 <Box className={classes.component}>
                 <img src={logoURL} className={classes.logo}/>
                 <Box className={classes.container}>
-                <Typography className={classes.subHeading}>Explore Plus</Typography>
+                <Typography className={classes.subHeading}>Explore <Box component ="span" style={{color:'#FFE500'}}>Plus</Box></Typography>
                 <img src={subURL} className={classes.subUrl}/>
                 </Box>
                 </Box>
                 <SearchBar />
+                <HeaderButtons /> 
 
-            </Toolbar>
+            </ToolBar>
         </AppBar>
     )
 }

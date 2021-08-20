@@ -1,44 +1,29 @@
 import React from 'react'
 import {makeStyles,alpha, InputBase} from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search';
+import { blue } from 'jest-matcher-utils/node_modules/chalk';
 
 const useStyle = makeStyles((theme)=>({
-     search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto',
-    },
+     search: {   
+    borderRadius: 2,
+    backgroundColor: '#fff',
+    marginLeft: 10,
+    width: '38%',
+    display: 'flex',
+    color: 'black',
   },
   searchIcon: {
-    padding: theme.spacing(0, 2),
+    padding: 5,
     height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    color: 'blue',
   },
   inputRoot: {
-    color: 'inherit',
+    fontSize: 'unset',
+    width: '100%',
   },
   inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
+    paddingLeft: 20,
   },
 }))
 
@@ -46,17 +31,18 @@ const SearchBar = ()=>{
     const classes = useStyle();
     return(
         <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
+            
             <InputBase
-              placeholder="Search…"
+              placeholder="Search for products, brands and more"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
             />
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
           </div>
     )
 
