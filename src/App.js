@@ -1,16 +1,11 @@
-import './App.css';
 
+import Header from './components/header/Header'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        
-      </header>
-    </div>
+    <>
+      <p>Hello React </p>
+      <Header/>
+    </>
   );
 }
 
