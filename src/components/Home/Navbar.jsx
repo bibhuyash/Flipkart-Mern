@@ -7,6 +7,7 @@ const useStyle = makeStyles({
     component:{
         display: 'flex',
         margin: ' 20px 130px 0 150px',
+        justifyContent: 'space-between'
         
     },
     container:{
